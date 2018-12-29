@@ -31,3 +31,14 @@ def ElimGauss(A,b):
     for k in range(n-2,-1,-1):
         x[k] = (b[k]-np.dot(A[k,k+1:n],x[k+1:n]))/A[k,k]
         return x
+    
+#Contol Soal
+from EliminasiGauss import ElimGauss
+
+A = np.array([[4,-2,1],[-2,4,-2],[1,-2,4]],float)
+b = np.array([11,-16,17],float)
+
+x = ElimGauss(A,b)
+print("Solusinya adalah: \n")
+for i in range(len(b)):
+    print("x{:1d} = {:5.5f}".format(i+1,x[i]))
